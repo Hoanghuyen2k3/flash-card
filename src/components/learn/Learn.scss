@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    h1, h2 {
+        font-size: clamp(18px, 2.5vw, 21px);
+        font-weight: 600;  
+    }
+    .corner, .inMiddle, .menu {
+        margin-left: 10%;
+    }
+    
+    .iconSun {
+        color: rgb(212, 49, 49);
+    }
+    .iconMoon {
+        color: rgb(235, 235, 19);
+    }
+    .menu {
+        margin-bottom: 20px;
+        display: flex;
+        select, button{
+            text-align: center;
+            padding: 8px;
+            margin-right: 20px;
+            font-weight: 600;
+            font-size: clamp(15px, 2vw, 20px);
+            border: none;
+            background-color: rgb(234, 228, 252);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        }
+       
+    }
+    .link-container {
+        position: relative;
+    }
+    .button {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        // margin-left: 20%;
+        text-align: left;
+        a {
+            text-decoration: none;
+            border: 1px solid rgb(0, 0, 0);
+            padding: 8px;
+            margin-right: 20px;
+            font-weight: 600;
+            font-size: clamp(12px, 1.5vw, 18px);
+            border: none;
+            background-color: rgb(234, 228, 252);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            color: black;
+
+
+        }
+        .active {
+            background-color: rgb(142, 127, 187);
+            color: rgb(255, 255, 255);
+
+        }
+    }
+    .child{
+        width: 100vw;
+    }
+    
+    
+}
+
+
+

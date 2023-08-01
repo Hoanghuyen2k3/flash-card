@@ -1,0 +1,47 @@
+.formMode{
+    padding: 5px;
+    font-weight: 600;
+    font-size: clamp(15px, 2vw, 18px);
+    margin-bottom: 40px;
+    margin-left: 10%;
+
+}
+
+.moduleTitle {
+    margin-top: 70px;
+    width: 100vw;
+    h1, h2 {
+        font-size: clamp(18px, 2.5vw, 21px);
+        font-weight: 600;  
+    }
+    .corner, .inMiddle, .formMode {
+        margin-left: 10%;
+    }
+    
+    .iconSun {
+        color: rgb(212, 49, 49);
+    }
+    .iconMoon {
+        color: rgb(235, 235, 19);
+    }
+    .formMode{
+        padding: 5px;
+        font-weight: 600;
+        font-size: clamp(15px, 2vw, 18px);
+        margin-bottom: 40px;
+
+    }
+    
+}
+@media only screen and (max-width: 800px){
+    .moduleTitle {
+        .corner, .formMode, .inMiddle {
+            margin-left: 5%;
+        }
+        
+    }
+    .formMode{
+        margin-left: 5%;
+    }
+    
+}

@@ -1,0 +1,103 @@
+$subtlepink: rgba(238, 174, 202, 1);
+$subtleblue: rgba(148, 187, 233, 1);
+
+.folderTitle{
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    margin: 30px;
+}
+.folder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-family:'Times New Roman', Times, serif;
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input {
+            width:70vw;
+            max-width: 500px;
+            height: 100px;
+            // border: none;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            border-radius: 20px;
+            margin: 20px;
+            font-size: 20px;
+        }
+        button {
+            border-radius: 35%;
+            width: 70px;
+            height: 50px;
+            background: rgb(238, 174, 202);
+            background: linear-gradient(30deg, $subtlepink 0%, $subtleblue 100%);
+            color: rgb(255, 255, 255);
+            font-size: 1em;
+            font-weight: 600;
+            border: none;
+            margin-bottom: 50px;
+    
+            box-shadow: inset 0 0 35px 0px rgba(0, 0, 0, 0.25),
+                inset 0 2px 1px 1px rgba(255, 255, 255, 0),
+                1px 1px 15px 2px rgba(154, 137, 164, 0.5);
+    
+            &:hover {
+                cursor: pointer;
+    
+                box-shadow: inset 0 0 35px 0px rgba(0, 0, 0, 0.15),
+                    inset 0 2px 1px 1px rgba(255, 255, 255, 0),
+                    1px 1px 15px 2px rgba(154, 137, 164, 0.1);
+            }
+    
+            &:active {
+                background: linear-gradient(
+                    30deg,
+                    rgba(210, 178, 212, 1) 0%,
+                    rgba(177, 183, 223, 1) 100%
+                );
+                color: rgba(192, 181, 218, 1);
+    
+                box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.15),
+                    1px 1px 15px 2px rgba(154, 137, 164, 0.1);
+            }
+        }
+    }
+    }
+
+    .reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .card {
+        width: 70vw;
+        max-width: 500px;
+        padding: 25px;
+        background-color: rgb(252, 252, 253);
+        border-radius: 10px;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 20px;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid rgb(0, 0, 0);
+        a{
+            color: black;
+        }
+        input {
+            font-size: clamp(12px, 1.5em, 18px);
+        }
+    }
+    .adjust-button {
+        button {
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+
+        }
+    }

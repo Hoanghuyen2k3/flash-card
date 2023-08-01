@@ -1,0 +1,119 @@
+$subtlepink: rgba(238, 174, 202, 1);
+$subtleblue: rgba(148, 187, 233, 1);
+.header{
+    display: flex;
+    width: 95vw;
+    margin: 25px;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+.dropdown-menu{
+    font-size: clamp(18px, 2.5vw, 28px);
+    margin-right: 10px;
+    
+
+}
+.name {
+    font-size: clamp(18px, 2.5vw, 28px);
+    margin-right: 10px;
+}
+       
+    
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    .nav-menu {
+        position: relative;
+    }
+    .menu-link {
+        position : absolute;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        a {
+            text-decoration: none;
+            padding: 5px;
+            padding-bottom: 20px;
+            margin-bottom: 5px;
+            border-radius: 5%;
+            height: 10px;
+            font-size: clamp(14px, 1.8vw, 20px);
+            color: rgb(0, 0, 0);
+            font-weight: 600;
+            border: none;
+            background: rgb(231, 214, 244);
+        }
+        .active {
+            background: rgb(198, 161, 227);
+
+        }
+    }
+}
+
+.nav {
+    display: flex;  
+    width: 80%;
+    height: 20%;
+    align-items: center;
+    font-weight: bold;
+    font-size: clamp(15px, 1.8vw, 20px);
+    margin: 10px;
+    .link {
+        a {
+            text-decoration: none;
+            height: 50px;
+            border-radius: 5%;
+            width: 90px;
+            height: 90px;
+            background: rgb(238, 174, 202);
+            background: linear-gradient(30deg, $subtlepink 0%, $subtleblue 100%);
+            color: rgb(218, 209, 230);
+            font-size: 1.5em;
+            font-weight: 600;
+            border: none;
+            margin: 5px;
+            padding: 10px;
+
+            box-shadow: inset 0 0 35px 0px rgba(0, 0, 0, 0.25),
+                inset 0 2px 1px 1px rgba(255, 255, 255, 0),
+                1px 1px 15px 2px rgba(154, 137, 164, 0.5);
+
+            &:hover {
+                cursor: pointer;
+
+                box-shadow: inset 0 0 35px 0px rgba(0, 0, 0, 0.15),
+                    inset 0 2px 1px 1px rgba(255, 255, 255, 0),
+                    1px 1px 15px 2px rgba(154, 137, 164, 0.1);
+            }
+        }
+        .active {
+            background: linear-gradient(
+                30deg,
+                rgba(210, 178, 212, 1) 0%,
+                rgba(177, 183, 223, 1) 100%
+            );
+            color: rgb(255, 255, 255);
+
+            box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.15),
+                1px 1px 15px 2px rgba(154, 137, 164, 0.1);
+    }
+    }
+
+    
+    }
+    @media only screen and (max-width: 800px) {   
+        .link {
+          display: none;
+        } 
+        .nav-container{
+            .menu-link {          
+                a {    
+                    padding: 5px;
+                    padding-bottom: 10px;         
+                }
+          }
+        }
+        
+    }
+    

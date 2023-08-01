@@ -1,0 +1,77 @@
+.cards {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    
+    button {
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+.single-card, .new {
+    margin: 20px;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 2fr 1fr; 
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.new {
+    grid-template-columns: 49% 49%; 
+    grid-template-rows: auto; 
+    justify-content: space-between;
+    textarea {
+        margin: 10px;
+        font-size: clamp(12px, 1.2vw, 16px);
+        padding: 10px;
+        height: 100px;
+
+    }
+}
+.star {
+    color: rgb(219, 164, 25);
+}
+.contents{
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr;
+    grid-row: auto;
+    // gap: 20px;
+    text-align: left;
+    textarea{
+        border: none;
+        border-right: 1px solid black;
+    }
+}
+.content {
+    font-size: 1.1rem;
+    margin: 10px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    border-right: 1px solid black;
+    padding-right: 10px;
+    height: 150px;
+    overflow-y: auto;
+}
+
+    .image {
+        width: 80%;
+        height: auto;
+        margin-top: 5px;
+    }
+.adjust-button {
+    display: flex;
+    justify-content: right;
+    margin: 0;
+}
+@media only screen and (max-width: 800px){
+    .content {
+        font-size: 0.8rem;
+        height: 100px;
+        // height: 10  0px;
+    }
+}

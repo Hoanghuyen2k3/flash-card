@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+        p {
+        font-family: 'Fasthand', cursive;
+    }
+    }
+
+.quote-box {
+    max-width: 500px;
+    min-width: 350px;
+    width: 50%;
+    margin-top: 50px;
+    margin: 30px auto;
+    padding: 30px;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    box-shadow: rgb(244, 202, 228) 0px 20px 30px -10px;
+    border-radius: 10px;
+    background-image: url("../../images/cloud-phone.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    font-size: clamp(12px, 2vw, 20px);
+
+blockquote {
+    border:none;
+    margin-bottom:-30px;
+    quotes: "\201C""\201D""\2018""\2019";
+    line-height: 1.25;
+    h2 {
+    font-size:18px;
+    font-size: clamp(12px, 2vw, 20px);
+    }
+    h2:before { 
+    content: open-quote;
+    font-size:30px;
+    }
+
+}
+figcaption {
+    text-align: right;
+    line-height: 4;
+}
+
+
+}
+.social {
+    display: flex;
+    img {
+        image-rendering: high-quality;
+        padding: 10px;
+        opacity: 1;
+}
+button {
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+    margin-left: auto;
+    border: none;
+    border: 1px solid #f4cee1;
+    background-color: transparent;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(238, 227, 193, 0.2) 0px 8px 24px;
+    animation: buttonFloat 2s infinite forwards;
+    &:hover{
+    cursor: pointer;
+
+    }
+
+}
+}
+@keyframes buttonFloat {
+    25% {
+        transform: rotate(-5deg);
+    }
+    75% {  
+        transform: rotate(5deg);
+    }
+}
+
+
+
+
+

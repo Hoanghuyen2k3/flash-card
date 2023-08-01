@@ -1,0 +1,57 @@
+.questAI{
+    display: flex;
+    flex-direction: column;
+    button {
+        margin: 10px 50px 10px 15px;
+        font-size: clamp(12px, 2vw, 18px);
+        width: 80%;
+        max-width: 80px;
+    }
+    .quest-container {
+        width: 100%;
+        textarea {
+            width: 45%;
+            margin: 10px;
+            padding: 10px;
+            height: 150px;
+            font-size: clamp(12px, 1.3vw, 16px);
+        }
+    }
+    .inputAI {
+        display: grid;
+        grid-template-columns: 15% 60% 15%;
+        grid-template-rows: auto;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        input {
+            font-size: clamp(15px, 1.5vw, 20px);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgb(67, 65, 65);
+            margin: 10px 50px 10px 15px;
+
+
+        }
+    }
+    @media only screen and (max-width: 1200px){
+        .quest-container {
+            textarea {
+                margin: 5px;
+            }
+        }
+
+    }
+    @media only screen and (max-width: 800px){
+        .inputAI {
+            padding: 5px;
+        }
+        .quest-container {
+            textarea {
+                margin: 5px;
+                padding: 5px;
+                height: 100px;
+            }
+        }
+
+    }
+}

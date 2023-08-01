@@ -1,0 +1,134 @@
+.container-flashcard{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    .toolbar-container {
+        display: flex;
+        margin-left: 10%;
+        .icon {
+            margin: 20px;
+        }
+    }
+}
+.flip {
+    background-color: aquamarine;
+    width: 100vw;
+    max-width: 800px;
+    margin: 10px auto;
+    height: 500px; 
+    background-color: white;
+    border: 1px solid white;
+    text-align: center;
+    display: grid;
+    grid-template-areas: 
+        "a c c c c c m "
+        "a c c c c c m "
+        "a c c c c c m "
+        "s img img img img img r "
+        "e e f t v w d";
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+    .s{
+        grid-area: s;
+    }
+    .t{
+        grid-area: t;
+    }
+    .c{
+        grid-area: c;
+        overflow-y: auto;
+        font-weight: 300;
+    }
+    .v{
+        grid-area: v;
+    }
+    .r{
+        grid-area: r;
+    }
+    .w {
+        grid-area: w;
+    }
+    .f {
+        grid-area: f;
+    }
+    .d {
+        grid-area: d;
+    }
+    // .q {
+    //     grid-area: q;
+    // }
+    // .z {
+    //     grid-area: z;
+    // }
+    .img{
+        width: 150px;
+        grid-area: img;
+        justify-self: center;
+    }
+    .icon {
+        font-size: 1.25rem;
+    }
+    .star {
+        color: rgb(229, 226, 45);
+    }
+    textarea {
+        border: none;
+        font-family: 'Open Sans', sans-serif;
+        font-size: clamp(14px, 2vw, 20px);
+
+    }
+    .center {
+        text-align: center;
+    }
+    .left {
+        text-align: left;
+    }
+    .right{
+        text-align: right;
+    }
+
+}
+.toolbar-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .icon {
+        font-size: 1rem;
+    }
+    
+    .toolbar {
+        position: absolute;
+        display: flex;
+        background-color: rgb(219, 202, 240);
+        border-radius: 5px;
+        padding: 5px;
+        right: 10%;
+        top: -70%;
+        .icon {
+            margin: 0;
+            margin: 5px;
+
+        }
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .flip{
+        height: 40vh;
+        width: 90vw;
+        .img {
+            width: 13vw;
+            height: 100%;
+        }
+    }
+    .toolbar-container{
+        .icon {
+            font-size: 0.8rem;
+        }
+    }
+
+}
