@@ -16,6 +16,8 @@ import Flashcard from '../components/learn/Flashcard';
 import Cards from '../components/learn/Cards'
 import LandingPage from '../components/landingPage/LandingPage';
 import StoryAI from '../components/learn/StoryAI';
+import { selectLogin } from '../features/loginSlice';
+import {useSelector } from 'react-redux/es/hooks/useSelector';
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -26,17 +28,16 @@ import {
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-
-  // Function to handle successful login
-  const handleLoginSuccess = () => {
-    setIsLoggedIn(true);
-  };
+  const isLoggedIn = useSelector(selectLogin)
+  console.log(isLoggedIn);
+  
   const router = createBrowserRouter(createRoutesFromElements(
-    !isLoggedIn ? (<Route path="landing" element={<LandingPage />} />):(
-    <Route  path="/" element={<Nav />}>
-      
-      <Route index element={<Home />} />
+    
+    <Route  path="/" element={<Nav />}>      
+      <Route path="home" element={<Home />} />
+      <Route index element={<LandingPage />} />
+      <Route path="login" element={<Login />} />
+
       <Route path="folder" element={<Folder />} />
       <Route path="learn/:folder" element={<Learn />}>
         <Route path="cards" element={<Cards />} />
@@ -103,9 +104,7 @@ function App() {
       <Route path="quiz" element={<Quiz />} />
       <Route path="*" element={<NotFound />} />
   
-    </Route>)
-    
-  ))
+    </Route>))
   
   return (
     <div className="App">

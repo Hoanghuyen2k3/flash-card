@@ -4,58 +4,74 @@
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    width:150px;
+    max-width:200px;
     font-family: 'Lumanosimo', cursive;
     background: linear-gradient(30deg, rgb(238, 173, 184) 0%, rgb(130, 180, 230) 100%);
-    border-radius: 15%;
-}
-
-h1 {
-    font-weight: 600;
-    font-size: 1.35rem;
-
-}
-.setTime, .controler, .number{
-    display:flex;
-    justify-content: space-between;
-}
-.counter{
-    border: 2px solid bisque;
-    border-radius: 20%;
-    padding: 8px;
-h3 {
-    font-size: 0.8rem;
-    word-spacing: 10px;
-}
-
-}
-
-.icon {
-    &:hover{
-        cursor: pointer;
-    }
-    &:active{
-        color: rgb(237, 218, 72);
-    }
+    border-radius: 5%;
 }
 .break {
+    width: 90%;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-    h3, h1 {
-        margin-bottom: 0px;
-        word-spacing: 10px;
-    }
     h1 {
-        padding: 20px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        font-size: clamp(18px, 2.5vw, 25px);
+        // margin-bottom: 0px;
+        word-spacing: 10px;
+        padding: 10px;
     }
 }
 .red {
     color: red;
-    h1 {
-        box-shadow: rgba(196, 25, 25, 0.35) 0px 5px 15px;
+    box-shadow: rgba(196, 25, 25, 0.35) 0px 5px 15px;
+}
+.controler {
+    display: flex;
+    .icon {
+        margin: 0;
+        font-size: clamp(18px, 2vw, 23px);
+        margin: 5px;
+        &:hover{
+            cursor: pointer;
+        }
+        &:active{
+            color: rgb(237, 218, 72);
+        }
     }
 }
-.c {
-    margin: 10px;
-    size: 8px;
+
+
+.setTime {
+    display: flex;
+    font-size: clamp(12px, 1.7vw, 14px);
+    width: 98%;
+
+    .counter {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: space-between;
+        margin: 5px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        .number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon {
+            margin: 0;
+            font-size: clamp(15px, 2vw, 20px);
+            margin: 2px;
+            &:hover{
+                cursor: pointer;
+            }
+            &:active{
+                color: rgb(237, 218, 72);
+            }
+        }
+    }
 }
+
+

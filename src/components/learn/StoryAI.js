@@ -42,7 +42,7 @@ function StoryAI() {
           model: "gpt-3.5-turbo",
           messages: [{
             role: "user",
-            content: `Write 1 full funny story less than 250 words and have a title based on these keywords: ${contentTerm.join(", ")}`,
+            content: `Write 1 full funny story less than 150 words and have a title based on these keywords: ${contentTerm.join(", ")}`,
           }],
           max_tokens: 600
 

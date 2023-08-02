@@ -25,7 +25,6 @@ function Study() {
         if(text.toLowerCase() ===quizzes[count].content.term.toLowerCase()){
             correctSound.play();
             setPerfect(true);
-            setText("");
             setNumCorrect(n => n+1);
             
         }

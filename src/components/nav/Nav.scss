@@ -1,15 +1,49 @@
 $subtlepink: rgba(238, 174, 202, 1);
 $subtleblue: rgba(148, 187, 233, 1);
+.black, .white {
+    margin: 0;
+    // padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+.black {
+    background-color: black;
+    color: white;
+
+}
 .header{
     display: flex;
     width: 95vw;
-    margin: 25px;
-    margin-top: 30px;
+    position: relative;
+    // margin: 25px;
+    // margin-top: 30px;
     justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin-top: 1%;
+
+    }
+    .icon {
+        font-size: clamp(27px, 3vw, 40px);
+        margin-left: 25px;
+    }
+    .pomodoro {
+        width: 20%;
+        position: absolute;
+        right: 0%;
+        top: 5%;
+    }
 }
 .dropdown-menu{
     font-size: clamp(18px, 2.5vw, 28px);
-    margin-right: 10px;
+    margin: 5px 10px 0 15px;
     
 
 }
@@ -25,6 +59,10 @@ $subtleblue: rgba(148, 187, 233, 1);
     flex-direction: column;
     .nav-menu {
         position: relative;
+    }
+    h2 {
+        cursor: pointer;
+        font-size: clamp(20px, 2.5vw, 30px);
     }
     .menu-link {
         position : absolute;
@@ -114,6 +152,14 @@ $subtleblue: rgba(148, 187, 233, 1);
                 }
           }
         }
-        
+        .header {
+            .containter {
+                width: 40%;
+            }
+            .pomodoro {
+                width: 30%;
+            }
+        }
+            
     }
     

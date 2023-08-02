@@ -109,12 +109,12 @@ function Pomodoro() {
       </div>
       <div className="controler">
         {
-          play ? <div className="icon c" onClick={handleClick}><FaPauseCircle size={18} /></div> : <div className="icon c" onClick={handleClick}><FaPlayCircle size={18} /></div>
+          play ? <div className="icon c" onClick={handleClick}><FaPauseCircle /></div> : <div className="icon c" onClick={handleClick}><FaPlayCircle /></div>
         }
-        <div className="icon c" onClick={handleRestart}><VscDebugRestart size={20} /></div>
+        <div className="icon c" onClick={handleRestart}><VscDebugRestart /></div>
         {
-          full ? <div className="icon c" onClick={() => setFull(full => !full)}><FaCompressArrowsAlt size={18} /></div> :
-            <div className="icon c" onClick={() => setFull(full => !full)}><FaExpandArrowsAlt size={18} /></div>
+          full ? <div className="icon c" onClick={() => setFull(full => !full)}><FaCompressArrowsAlt /></div> :
+            <div className="icon c" onClick={() => setFull(full => !full)}><FaExpandArrowsAlt /></div>
         }
       </div>
       {
