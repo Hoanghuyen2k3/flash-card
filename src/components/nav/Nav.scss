@@ -2,7 +2,6 @@ $subtlepink: rgba(238, 174, 202, 1);
 $subtleblue: rgba(148, 187, 233, 1);
 .black, .white {
     margin: 0;
-    // padding: 20px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -18,8 +17,6 @@ $subtleblue: rgba(148, 187, 233, 1);
     display: flex;
     width: 95vw;
     position: relative;
-    // margin: 25px;
-    // margin-top: 30px;
     justify-content: space-between;
     align-items: center;
     align-content: center;

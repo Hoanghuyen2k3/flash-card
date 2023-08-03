@@ -4,7 +4,7 @@ import { useState } from "react"
 import Pomodoro from "../pomodoro/Pomodoro"
 import { FaBars } from "react-icons/fa";
 import { FaToggleOff,FaToggleOn  } from "react-icons/fa6";
-import { selectLogin, logout, editLogin } from "../../features/loginSlice";
+import { selectLogin, logout } from "../../features/loginSlice";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 

@@ -5,7 +5,7 @@ import { Outlet,useNavigate , useParams, NavLink } from 'react-router-dom';
 import { selectModule } from '../../features/moduleSlice';
 import {selectFolder} from '../../features/folderSlice';
 import "./Learn.scss"
-import { FaSun, FaMoon , FaAngleRight} from "react-icons/fa";
+import { FaSun, FaMoon} from "react-icons/fa";
 
 function Learn() {
   const quiz = useSelector(selectQuiz);

@@ -76,19 +76,18 @@ h2 {
     
     @for $i from 1 through 13 {
       span:nth-child(#{$i}) {
-        --index: #{$i}; // Set a custom property to store the word index
-        animation: fadeIn 0.3s ease-in-out; // Customize the animation duration and timing as needed
-        animation-fill-mode: forwards; // Keeps the final opacity after animation ends
-        animation-delay: calc(0.3s * (var(--index) + 1)); // Delay each word based on its index
+        --index: #{$i}; 
+        animation: fadeIn 0.3s ease-in-out;
+        animation-fill-mode: forwards; 
+        animation-delay: calc(0.3s * (var(--index) + 1));
       }
     }
   }
   .get-attention {
-    // text-align: left;
     width: 70vw;
     margin: 10px auto;
     .hand {
-      animation: swing 2s ease-in-out infinite; /* Apply the animation */
+      animation: swing 2s ease-in-out infinite; 
       transform-origin: bottom right;
       display: inline-block;
     }
@@ -107,9 +106,8 @@ h2 {
     grid-template-columns: 32% 32% 32%;
     grid-row: auto;
     gap: 15px;
-    justify-items: center; /* Center items horizontally */
-    // align-items: center;
-    
+    justify-items: center; 
+   
   }
   .bold {
     font-weight: 600;
@@ -122,10 +120,10 @@ h2 {
         transform: rotate(0deg);
     }
     50% {
-        transform: rotate(35deg); /* Angle to one side */
+        transform: rotate(35deg); 
     }
     100% {
-        transform: rotate(-5deg); /* Back to original angle */
+        transform: rotate(-5deg); 
     }
 }
 
@@ -133,11 +131,7 @@ h2 {
 
 .footer {
   border-top: 1px solid black;
-  // background-color: aliceblue;
-  // color: black;
   margin-top: 30px;
-  // width: 100%;
-  // text-align: cen;
   padding: 3px;
   font-size: clamp(12px, 1.5vw, 15px);
 

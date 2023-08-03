@@ -60,7 +60,7 @@ function Pomodoro() {
       timer = setTimeout(() => showTime(remainder, setRemainder), 1000);
     }
   
-    return () => clearTimeout(timer); // Cleanup the previous timeout
+    return () => clearTimeout(timer); 
   }, [play, remainder, br, session]);
   
 

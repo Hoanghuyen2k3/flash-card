@@ -6,7 +6,7 @@ function DashBoard() {
     useEffect(() => {
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         const today = new Date();
-        const dayIndex = today.getDay(); // 0 (Sunday) to 6 (Saturday)
+        const dayIndex = today.getDay(); 
         const currentDay = days[dayIndex];
         setDayOfWeek(currentDay);
     }, []);
