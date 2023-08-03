@@ -33,10 +33,9 @@ function App() {
   
   const router = createBrowserRouter(createRoutesFromElements(
     
-    <Route  path="/" element={<Nav />}>      
-      <Route path="home" element={<Home />} >
+    <Route  path="/memoritoo" element={<Nav />}>      
+      <Route path="home" element={<Home />} />
         
-      </Route>
       <Route index element={<LandingPage />} />
       <Route path="login" element={<Login />} />
       <Route path="landing" element={<LandingPage />} />
