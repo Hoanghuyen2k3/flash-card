@@ -36,16 +36,16 @@ const Nav =()=>{
                   <div className="dropdown-menu" onClick={toggleDropdown}><FaBars /></div>
                   <h2 className="name" onClick={navigateToRoot}>MEMORITOO</h2>
                   <div className="link">
-                    <NavLink to="/home" >
+                    <NavLink to="home" >
                       Home
                     </NavLink>
-                    <NavLink to="/folder">
+                    <NavLink to="folder">
                       Folder
                     </NavLink>
-                    <NavLink to="/module">
+                    <NavLink to="module">
                       Module
                     </NavLink>
-                    <NavLink to="/quiz">
+                    <NavLink to="quiz">
                       Quiz
                     </NavLink>
                   </div>
@@ -54,16 +54,16 @@ const Nav =()=>{
                   {
                     isOpen&& (
                       <div className="menu-link" onClick={toggleDropdown}>
-                        <NavLink to="/home" >
+                        <NavLink to="home" >
                           Home
                         </NavLink>
-                        <NavLink to="/folder">
+                        <NavLink to="folder">
                           Folder
                         </NavLink>
-                        <NavLink to="/module">
+                        <NavLink to="module">
                           Module
                         </NavLink>
-                        <NavLink to="/quiz">
+                        <NavLink to="quiz">
                           Quiz
                         </NavLink>
                       </div>
