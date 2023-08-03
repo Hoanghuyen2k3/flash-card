@@ -1,20 +1,32 @@
-import { NavLink, Outlet, Link , useNavigate} from "react-router-dom"
+import { NavLink, Outlet, useNavigate} from "react-router-dom"
 import './Nav.scss'
 import { useState } from "react"
 import Pomodoro from "../pomodoro/Pomodoro"
 import { FaBars } from "react-icons/fa";
 import { FaToggleOff,FaToggleOn  } from "react-icons/fa6";
+import { selectLogin, logout, editLogin } from "../../features/loginSlice";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+
 const Nav =()=>{   
     const [isOpen, setIsOpen] = useState(false);
     const [bg, setBg] = useState(false);
+    const [show, setShow] = useState(false);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    const login = useSelector(selectLogin);
     const navigateToRoot = () => {
-      navigate('/');
+      navigate('/landing');
     };
       const toggleDropdown = () => {
         setIsOpen((prevOpen) => !prevOpen);
     }; 
+    const handleLogout =(e)=>{
+      e.preventDefault();
+      dispatch(logout())
+      navigate('/landing');
+      
+    }
     return(
         <div className={bg?"black":"white"}>
           <div className="header">
@@ -61,7 +73,22 @@ const Nav =()=>{
                 </div>
 
               </div>
-              <div className="icon" onClick={()=>setBg(b =>!b)}>{bg ? <FaToggleOff/> : <FaToggleOn />}</div>
+              <div className="icon-avatar">
+                <div className="icon" onClick={()=>setBg(b =>!b)}>{bg ? <FaToggleOff/> : <FaToggleOn />}</div>
+                {!login ?<button className="login" onClick={()=>navigate("/login")}>Login</button>:
+                <>
+                <div className="avatar" onClick={()=>setShow(s =>!s)}>{login&&<img src="https://pbs.twimg.com/media/EYVxlOSXsAExOpX.jpg" alt="avata"/>}</div>
+                {
+                  show && 
+                    <button className="logout" onClick={handleLogout}>
+                      logout
+
+                    </button>
+                }
+                
+                </>}
+              </div>
+              
             </div>   
             <div className="pomodoro">
               <Pomodoro />

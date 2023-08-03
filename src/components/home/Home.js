@@ -4,7 +4,6 @@ import Quote from './Quote';
 import { apikey } from '../../apikey';
 import './home.scss';
 import DashBoard from './DashBoard';
-import RecentAdded from './RecentAdded';
 const Home = () => {
   const [quoteData, setQuoteData] = useState({
     quote: 'It is never too late to be what you might have been.',
@@ -47,8 +46,9 @@ const Home = () => {
 
   return (
     <div className="container">
-      <RecentAdded />
+      <h1 className="under">NEED ENERGY ...!?</h1>
       <Quote data={quoteData} quote={fetchQuote} loading={loading} />
+      <h1 className="under">DASHBOARD</h1>
       <DashBoard />
     </div>
   );

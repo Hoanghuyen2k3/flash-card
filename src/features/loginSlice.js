@@ -4,10 +4,14 @@ const loginSlice = createSlice({
     initialState: false,
     reducers:{
         editLogin:(state)=>{
-            return !state;
+            return true;
+        },
+        logout: (state)=>{
+            console.log("logout")
+            return false;
         }
     }
 })
-export const {editLogin} = loginSlice.actions;
+export const {editLogin, logout} = loginSlice.actions;
 export const selectLogin =(state)=>state.login;
 export default loginSlice.reducer;

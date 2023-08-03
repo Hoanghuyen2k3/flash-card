@@ -6,14 +6,18 @@
         font-family: 'Fasthand', cursive;
     }
     }
+    .under {
+        text-decoration: underline;
+    }
 
 .quote-box {
     max-width: 500px;
-    min-width: 350px;
-    width: 50%;
+    // min-width: 350px;
+    width:70vw;
     margin-top: 50px;
     margin: 30px auto;
     padding: 30px;
+    color: black;
     font-family:Georgia, "Times New Roman", Times, serif;
     box-shadow: rgb(244, 202, 228) 0px 20px 30px -10px;
     border-radius: 10px;

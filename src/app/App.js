@@ -34,10 +34,12 @@ function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     
     <Route  path="/" element={<Nav />}>      
-      <Route path="home" element={<Home />} />
+      <Route path="home" element={<Home />} >
+        
+      </Route>
       <Route index element={<LandingPage />} />
       <Route path="login" element={<Login />} />
-
+      <Route path="landing" element={<LandingPage />} />
       <Route path="folder" element={<Folder />} />
       <Route path="learn/:folder" element={<Learn />}>
         <Route path="cards" element={<Cards />} />
@@ -57,9 +59,9 @@ function App() {
       </Route>
   
       <Route path="folder/:folder" element={<FolderModule />} />
-      <Route path=":folder" element={<FolderModule />} />
+      <Route path="home/:folder" element={<FolderModule />} />
       <Route path="folder/:folder/:module" element ={<ModuleQuiz />} />
-      <Route path=":folder/:module" element ={<ModuleQuiz />} />
+      <Route path="home/:folder/:module" element ={<ModuleQuiz />} />
       <Route path="folder/:folder/learn/:module" element ={<Learn />} >
         <Route path="cards" element={<Cards />} />
         <Route path="game" element={<Game />} />
@@ -69,7 +71,7 @@ function App() {
 
   
       </Route>
-      <Route path=":folder/learn/:module" element ={<Learn />} >
+      <Route path="home/:folder/learn/:module" element ={<Learn />} >
         <Route path="cards" element={<Cards />} />
         <Route path="game" element={<Game />} />
         <Route path="flashcard" element={<Flashcard />} />
@@ -81,7 +83,7 @@ function App() {
   
       <Route path="module" element={<Module />} />
       <Route path="module/:module" element ={<ModuleQuiz />} />
-      <Route path=":module" element ={<ModuleQuiz />} />
+      <Route path="home/:module" element ={<ModuleQuiz />} />
       <Route path="module/learn/:module" element ={<Learn />} >
         <Route path="game" element={<Game />} />
         <Route path="cards" element={<Cards />} />
