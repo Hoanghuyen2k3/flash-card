@@ -5,7 +5,7 @@ Welcome to Memoritoo, a powerful learning platform powered by OpenAI! This React
 
 # How website works
 
-![Introduction to Memoritoo](https://www.youtube.com/watch?v=kx4aKYlviYs)
+[![Click to Watch](https://drive.google.com/file/d/1cIKLbycVELpqme9CDr24jlJPNphi758s/view?usp=sharing)](https://drive.google.com/file/d/1cIKLbycVELpqme9CDr24jlJPNphi758s/view?usp=sharing)
 
 ## Table of Contents
 
@@ -14,11 +14,9 @@ Welcome to Memoritoo, a powerful learning platform powered by OpenAI! This React
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Integration](#api-integration)
-- [Customization](#customization)
 - [Styling](#styling)
 - [Contributing](#contributing)
-- [License](#license)
-
+- 
 ## Features
 
 Memoritoo offers the following key features:
@@ -67,14 +65,6 @@ Memoritoo integrates the OpenAI API for quiz generation and a custom API for mot
 1. Obtain API keys from OpenAI and the custom API provider.
 2. Create configuration files for storing API keys securely.
 3. Implement API calls in the app using libraries like `axios`.
-
-## Customization
-
-You can customize Memoritoo by:
-
-- Adjusting learning session and break timings in the Pomodoro clock.
-- Modifying quiz generation parameters.
-- Adding new learning modes or features.
 
 ## Styling
 
