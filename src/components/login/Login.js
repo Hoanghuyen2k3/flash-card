@@ -14,7 +14,7 @@ function Login() {
     if (gm === 'demo@gmail.com' && ps === 'demo123') {
       dispatch(editLogin());
       setMess('');
-      navigate('/home');
+      navigate('/memoritoo/home');
     } else {
       setMess('No user with those credentials found');
     }

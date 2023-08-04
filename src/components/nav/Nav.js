@@ -16,7 +16,7 @@ const Nav =()=>{
     const navigate = useNavigate();
     const login = useSelector(selectLogin);
     const navigateToRoot = () => {
-      navigate('/landing');
+      navigate('/memoritoo/landing');
     };
       const toggleDropdown = () => {
         setIsOpen((prevOpen) => !prevOpen);
@@ -75,7 +75,7 @@ const Nav =()=>{
               </div>
               <div className="icon-avatar">
                 <div className="icon" onClick={()=>setBg(b =>!b)}>{bg ? <FaToggleOff/> : <FaToggleOn />}</div>
-                {!login ?<button className="login" onClick={()=>navigate("/login")}>Login</button>:
+                {!login ?<button className="login" onClick={()=>navigate("/memoritoo/login")}>Login</button>:
                 <>
                 <div className="avatar" onClick={()=>setShow(s =>!s)}>{login&&<img src="https://pbs.twimg.com/media/EYVxlOSXsAExOpX.jpg" alt="avata"/>}</div>
                 {
