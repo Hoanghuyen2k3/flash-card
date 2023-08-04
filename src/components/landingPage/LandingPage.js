@@ -30,7 +30,7 @@ function LandingPage() {
         <div className="video">
           <VideoPlayer />
         </div>
-        <Link className="start-login" to="/login">Get Started</Link>
+        <Link className="start-login" to="/memoritoo/login">Get Started</Link>
 
 
       </div>
