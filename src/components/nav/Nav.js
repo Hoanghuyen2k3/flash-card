@@ -24,7 +24,7 @@ const Nav =()=>{
     const handleLogout =(e)=>{
       e.preventDefault();
       dispatch(logout())
-      navigate('/landing');
+      navigate('/memoritoo/landing');
       
     }
     return(
