@@ -5,7 +5,7 @@ import {v4 as uuidv4} from 'uuid';
 import { FaRegImage } from "react-icons/fa";
 import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { openAIkey } from '../../apikey'
+import axios from 'axios';
 import "./FormAI.scss";
 function FormAI({module, setImage, image}){
     const [term, setTerm] = useState("");
@@ -45,31 +45,20 @@ function FormAI({module, setImage, image}){
     }
     const handleDefine = async (event) => {
         event.preventDefault();
-        const options ={
-          method: "POST",
-          headers:{
-            "Authorization": `Bearer ${openAIkey}`,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: [{
-              role: "user",
-              content: `Define this word ${term} in concise way`
-            }],
-            max_tokens: 100
-  
-          })
-        }
-    
+
         try {
-          const response = await fetch('https://api.openai.com/v1/chat/completions', options)
-          const data = await response.json();
-          console.log(data.choices[0].message.content);
-          setDefine(data.choices[0].message.content)
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
+            const response = await axios.post('http://localhost:3003/formAI', {
+              term: term
+            });
+            setDefine(response.data.answer);
+        
+            console.log('Answer:', response.data.answer);
+          } catch (error) {
+            console.error('An error occurred:', error);
+          }
+        
+    
+        
       };
     return(
         <div className="formQuiz">

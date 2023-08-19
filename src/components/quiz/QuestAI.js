@@ -5,8 +5,8 @@ import {v4 as uuidv4} from 'uuid';
 import { FaRegImage } from "react-icons/fa";
 import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { openAIkey } from '../../apikey'
 import "./QuestAI.scss"
+import axios from 'axios';
 function FormAI({module, setImage, image}){
     const [term, setTerm] = useState("");
     const [define, setDefine] = useState("");
@@ -66,35 +66,32 @@ function FormAI({module, setImage, image}){
     }
     const handleDefine = async (event) => {
         event.preventDefault();
-        const options ={
-          method: "POST",
-          headers:{
-            "Authorization": `Bearer ${openAIkey}`,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: [{
-              role: "user",
-              content: `Generate only one multiple choices question with answer based on keywords: ${keywords}`
-            }],
-            max_tokens: 200
-  
-          })
-        }
-    
         try {
-          const response = await fetch('https://api.openai.com/v1/chat/completions', options)
-          const data = await response.json();
+          const response = await axios.post('http://localhost:3003/questAI', {
+            keywords: keywords
+          });
           
-          const messages = data.choices[0]?.message?.content ?? '';
-          console.log(messages)
-          const { questions, answers } = extractQuestionsAndAnswers(messages);
+          const { questions, answers } = extractQuestionsAndAnswers(response.data.answer);
           setTerm(questions.join('\n'));
           setDefine(answers)
+    
+          console.log('Answer:', response.data.answer);
         } catch (error) {
-          console.error('Error fetching data:', error);
+          console.error('An error occurred:', error);
         }
+    
+        // try {
+        //   const response = await fetch('https://api.openai.com/v1/chat/completions', options)
+        //   const data = await response.json();
+          
+        //   const messages = data.choices[0]?.message?.content ?? '';
+        //   console.log(messages)
+        //   const { questions, answers } = extractQuestionsAndAnswers(messages);
+        //   setTerm(questions.join('\n'));
+        //   setDefine(answers)
+        // } catch (error) {
+        //   console.error('Error fetching data:', error);
+        // }
       };
 
     

@@ -4,9 +4,6 @@ import { useOutletContext } from 'react-router-dom';
 function Cards() {
     const [image, setImage] = useState(null);
     const quizzes = useOutletContext();
-    // useEffect(()=>{
-    //   console.log(quizzes)
-    // }, [quizzes])
     if (!quizzes || quizzes.length === 0) {
       return <div>Empty or Loading...</div>;
     }
