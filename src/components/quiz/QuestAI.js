@@ -80,18 +80,7 @@ function FormAI({module, setImage, image}){
           console.error('An error occurred:', error);
         }
     
-        // try {
-        //   const response = await fetch('https://api.openai.com/v1/chat/completions', options)
-        //   const data = await response.json();
-          
-        //   const messages = data.choices[0]?.message?.content ?? '';
-        //   console.log(messages)
-        //   const { questions, answers } = extractQuestionsAndAnswers(messages);
-        //   setTerm(questions.join('\n'));
-        //   setDefine(answers)
-        // } catch (error) {
-        //   console.error('Error fetching data:', error);
-        // }
+        
       };
 
     
