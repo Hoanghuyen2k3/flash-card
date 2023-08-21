@@ -5,7 +5,7 @@ import VideoPlayer from './VideoPlayer';
 function LandingPage() {
   return(
     <div className="landing-container"> 
-      <Link className="start-login" to="/login">Get Started</Link>
+      <Link className="start-login" to="/memoritoo/login">Get Started</Link>
      
       <div className="headingT">MEMORITOO</div>
       
@@ -22,7 +22,7 @@ function LandingPage() {
           <p>Do you struggle to retain new knowledge?</p>
       
           <h2>Say hello <span className="hand">👋</span> to Memorito</h2>
-          <Link className="start-login" to="/login">Get Started</Link>
+          <Link className="start-login" to="/memoritoo/login">Get Started</Link>
 
       </div>
       <h2>...How it works...</h2>

@@ -24,8 +24,13 @@ function FolderCard({id, name, f, index, handle, remove, folder}) {
                 } type="search" value={edit.name} required ></input>}
 
             <div className="adjust-button">
-                {!edit.edit&&<button onClick={()=>setEdit({edit:true, id: f.id, name: f.name})}><FaRegEdit /></button>}
-                {edit.edit&&<button onClick={()=>{
+                {!edit.edit&&<div className='container' onClick={()=>setEdit({edit:true, id: f.id, name: f.name})}>
+                    <p className="content">Edit</p>
+                    <FaRegEdit />
+                    </div>}
+                {edit.edit&&<div
+                    className='container'
+                    onClick={()=>{
                     folder?dispatch(handle({
                         index: index,
                         id: edit.id,
@@ -37,10 +42,19 @@ function FolderCard({id, name, f, index, handle, remove, folder}) {
                         name: edit.name}));
                     setEdit({edit: false, id:"", name:""})
 
-                    }}><FaCheck /></button>}
-                <Link to={`learn/${id}`}><button><FaBookReader /></button></Link>
+                    }}>
+                        <p className='content'>Submit</p>
+                        <FaCheck />
+                    </div>}
+                <Link to={`learn/${id}`}><div className="container">
+                    <p className="content">Learn</p>
+                    <FaBookReader />
+                </div></Link>
 
-                <button onClick={()=>dispatch(remove(f))}><FaRegTrashAlt /></button>
+                <div onClick={()=>dispatch(remove(f))} className='container'>
+                    <p className="content">Remove</p>
+                    <FaRegTrashAlt />
+                </div>
 
             </div>
             
