@@ -7,10 +7,12 @@ import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./QuestAI.scss"
 import axios from 'axios';
+import Loading from '../loading/Loading';
 function FormAI({module, setImage, image}){
     const [term, setTerm] = useState("");
     const [define, setDefine] = useState("");
     const [keywords, setKeywords] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const dispatch=useDispatch();
     
@@ -67,6 +69,7 @@ function FormAI({module, setImage, image}){
     const handleDefine = async (event) => {
         event.preventDefault();
         try {
+          setLoading(true);
           const response = await axios.post('http://localhost:3003/questAI', {
             keywords: keywords
           });
@@ -79,6 +82,9 @@ function FormAI({module, setImage, image}){
         } catch (error) {
           console.error('An error occurred:', error);
         }
+        finally{
+          setLoading(false)
+        }
     
         
       };
@@ -87,8 +93,9 @@ function FormAI({module, setImage, image}){
     return(
         <div className="formQuiz">
             <ToastContainer />
-
-            <form onSubmit={handleSubmit} >
+            {
+              loading ? <Loading /> :(
+                <form onSubmit={handleSubmit} >
                 <div className="input-container questAI">
                   <div  className="quest-container inputAI">
                     <h3>Keywords: </h3>
@@ -121,6 +128,11 @@ function FormAI({module, setImage, image}){
                 <button type="submit">Submit</button>
 
             </form>
+
+              )
+            }
+
+           
         </div>      
     )
 }

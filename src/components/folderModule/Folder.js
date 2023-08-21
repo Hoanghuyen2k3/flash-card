@@ -26,7 +26,7 @@ const Folder =()=>{
                 {
                     Folder.map((f, i)=>{
                         return(
-                            <FolderCard key ={f.id} id={f.id} name={f.name} f ={f} index={i} handle={editFolder} remove={removeFolder}/>
+                            <FolderCard  id={f.id} name={f.name} f ={f} index={i} handle={editFolder} remove={removeFolder}/>
                             
                             )
                     })

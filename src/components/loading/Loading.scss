@@ -1,0 +1,27 @@
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 100vh;
+  }
+  
+  .bouncing-ball {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    animation: bounce 1.5s ease-in-out infinite, changeColor 3s linear infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-100px); }
+  }
+  
+  @keyframes changeColor {
+    0%, 100% { background-color: #3498db; }
+    25% { background-color: #e74c3c; }
+    50% { background-color: #2ecc71; }
+    75% { background-color: #f39c12; }
+  }
+  

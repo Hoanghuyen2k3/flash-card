@@ -4,7 +4,7 @@ import { FaRegEdit, FaCheck, FaBookReader, FaRegTrashAlt } from "react-icons/fa"
 import {useDispatch } from 'react-redux';
 
 
-function FolderCard({key, id, name, f, index, handle, remove, folder}) {
+function FolderCard({id, name, f, index, handle, remove, folder}) {
     const [edit, setEdit] = useState(
         {
             edit:false, 
@@ -15,7 +15,7 @@ function FolderCard({key, id, name, f, index, handle, remove, folder}) {
 
     const dispatch = useDispatch();
   return (
-        <div className="card" key={key} >
+        <div className="card" key={f.id} >
             {!edit.edit&&<Link to={id}>{name}</Link>}
             {edit.edit&&<input onChange={(e)=>setEdit(edit=>{
                 return({

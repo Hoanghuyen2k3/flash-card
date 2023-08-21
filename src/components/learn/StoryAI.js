@@ -3,7 +3,11 @@ import {useState} from 'react'
 import { useOutletContext } from 'react-router-dom';
 import "./StoryAI.scss"
 import axios from 'axios';
+import Loading from '../loading/Loading';
+
 function StoryAI() {
+    const [loading, setLoading] = useState(false);
+
     const quizzes = useOutletContext();
     const [title, setTitle] = useState('');
     const [bodyStory, setBody] = useState('');
@@ -31,9 +35,9 @@ function StoryAI() {
   
     const handleSubmit = async (event) => {
       event.preventDefault();
-      alert("I'm writing a story ... 5s.....");
 
       try {
+        setLoading(true);
         const response = await axios.post('http://localhost:3003/story', {
             contentTerm: contentTerm
           });
@@ -51,7 +55,11 @@ function StoryAI() {
       } catch (error) {
         console.error('Error fetching data:', error);
       }   
+      finally {
+        setLoading(false)
+      }
     };
+
     if (!quizzes || quizzes.length === 0) {
       return <div>Empty or Loading...</div>;
     }
@@ -61,7 +69,9 @@ function StoryAI() {
       <div className="story-container">
           
         <button onClick={handleSubmit}>New Story</button>
-        <div className="story">
+        {
+          loading ? <Loading />: (
+            <div className="story">
           <div className="img">
             {imgTitle&&<img src={imgTitle} alt={title} />}
           </div>
@@ -70,6 +80,8 @@ function StoryAI() {
             {bodyStory&&<textarea readOnly value={bodyStory.join('\n')}></textarea>}
           </div>   
         </div>
+          )
+        }
       </div>
       :<div className="story-no">  
         <button onClick={handleSubmit}>New Story</button>
