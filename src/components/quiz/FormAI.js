@@ -50,7 +50,7 @@ function FormAI({module, setImage, image}){
 
         try {
             setLoading(true);
-            const response = await axios.post('http://localhost:3003/formAI', {
+            const response = await axios.post('https://memoritoo-server.onrender.com/formAI', {
               term: term
             });
             setDefine(response.data.answer);

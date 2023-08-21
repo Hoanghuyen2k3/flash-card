@@ -38,7 +38,7 @@ function StoryAI() {
 
       try {
         setLoading(true);
-        const response = await axios.post('http://localhost:3003/story', {
+        const response = await axios.post('https://memoritoo-server.onrender.com/story', {
             contentTerm: contentTerm
           });
         console.log(response)
@@ -46,7 +46,7 @@ function StoryAI() {
         setBody(body)
         setTitle(title)
 
-        const image = await axios.post('http://localhost:3003/image', {
+        const image = await axios.post('https://memoritoo-server.onrender.com/image', {
             title: title
           });
         console.log(image)

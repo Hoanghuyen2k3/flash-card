@@ -70,7 +70,7 @@ function FormAI({module, setImage, image}){
         event.preventDefault();
         try {
           setLoading(true);
-          const response = await axios.post('http://localhost:3003/questAI', {
+          const response = await axios.post('https://memoritoo-server.onrender.com/questAI', {
             keywords: keywords
           });
           
