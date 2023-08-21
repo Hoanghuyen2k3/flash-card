@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 
 const Nav =()=>{   
     const [isOpen, setIsOpen] = useState(false);
-    const [bg, setBg] = useState(true);
+    const [bg, setBg] = useState(false);
     const [show, setShow] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();

@@ -1,8 +1,8 @@
 import React from 'react'
 import {useState} from 'react'
-import { openAIkey } from '../../apikey'
 import { useOutletContext } from 'react-router-dom';
 import "./StoryAI.scss"
+import axios from 'axios';
 function StoryAI() {
     const quizzes = useOutletContext();
     const [title, setTitle] = useState('');
@@ -32,45 +32,21 @@ function StoryAI() {
     const handleSubmit = async (event) => {
       event.preventDefault();
       alert("I'm writing a story ... 5s.....");
-      const options ={
-        method: "POST",
-        headers:{
-          "Authorization": `Bearer ${openAIkey}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          model: "gpt-3.5-turbo",
-          messages: [{
-            role: "user",
-            content: `Write 1 full funny story less than 150 words and have a title based on these keywords: ${contentTerm.join(", ")}`,
-          }],
-          max_tokens: 600
 
-        })
-      }
-  
       try {
-        const response = await fetch('https://api.openai.com/v1/chat/completions', options)
-        const data = await response.json();
-        console.log(data.choices[0].message.content);
-        const {body, title} = extractBodyAndTitle(data.choices[0].message.content); 
+        const response = await axios.post('http://localhost:3003/story', {
+            contentTerm: contentTerm
+          });
+        console.log(response)
+        const {body, title} = extractBodyAndTitle(response.data.answer); 
         setBody(body)
         setTitle(title)
 
-        const img = await fetch('https://api.openai.com/v1/images/generations',{
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${openAIkey}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          prompt : title.join(", "),
-          n: 1,
-          size:"512x512"
-        })})
-        const image = await img.json();
-        console.log(image.data[0].url)
-        setImgTitle(image.data[0].url)
+        const image = await axios.post('http://localhost:3003/image', {
+            title: title
+          });
+        console.log(image)
+        setImgTitle(image.data.data[0].url)
 
       } catch (error) {
         console.error('Error fetching data:', error);
