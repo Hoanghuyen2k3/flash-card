@@ -26,18 +26,15 @@ function Learn() {
 
 
   const filterQuizzes = useCallback(() => {
-    return filter === "star" ? quiz.filter(q => q.star === true) : quiz;
+    return filter === "no" ? quiz.filter(q => q.star === true) : quiz;
   }, [filter, quiz]);
 
-  const [quizzes, setQuizzes] = useState([]);
-
-  useEffect(() => {
-    const filteredQuizzes = filterQuizzes();
-    setQuizzes(filteredQuizzes);
-  }, [filter, filterQuizzes]);
+  const [quizzes, setQuizzes] = useState(quiz);
 
   const handleStar = (e) => {
     setFilter(e.target.value);
+    const filteredQuizzes = filterQuizzes();
+    setQuizzes(filteredQuizzes);
   };
 
   const toggleNavLink = () => {
