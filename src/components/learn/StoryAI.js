@@ -61,7 +61,7 @@ function StoryAI() {
     };
 
     if (!quizzes || quizzes.length === 0) {
-      return <div>Empty or Loading...</div>;
+      return <div>Empty ... 🥹</div>;
     }
   
     return (

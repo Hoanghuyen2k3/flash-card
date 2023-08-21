@@ -8,7 +8,7 @@ import "./Learn.scss"
 import { FaSun, FaMoon} from "react-icons/fa";
 
 function Learn() {
-  const quiz = useSelector(selectQuiz);
+  const quizz = useSelector(selectQuiz);
   const modules = useSelector(selectModule);
   const folders = useSelector(selectFolder);
   const [navLinkVisible, setNavLinkVisible] = useState(false);
@@ -16,9 +16,14 @@ function Learn() {
   const params = useParams();
 
   const moduleFilter = params.folder ? modules.filter((m) => m.folder === params.folder) : [];
-  const module = moduleFilter.map(m => m.id);
+  const module = params.module? [params.module] :moduleFilter.map(m => m.id);
   const folder = params.folder ? folders.filter(f => f.id === params.folder) : "";
   const moduleL = params.module ? modules.filter(m => m.id === params.module) : "";
+  const quiz = quizz.filter(a => module.includes(a.module)) ;
+  // console.log(quiz);
+  
+
+
 
   const filterQuizzes = useCallback(() => {
     return filter === "star" ? quiz.filter(q => q.star === true) : quiz;

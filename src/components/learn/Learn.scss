@@ -1,6 +1,7 @@
 .container {
     display: flex;
     align-items: flex-start;
+    text-align: center;
     h1, h2 {
         font-size: clamp(18px, 2.5vw, 21px);
         font-weight: 600;  
