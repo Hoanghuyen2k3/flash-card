@@ -35,9 +35,10 @@ function StoryAI() {
   
     const handleSubmit = async (event) => {
       event.preventDefault();
+      setLoading(true);
 
       try {
-        setLoading(true);
+        
         const response = await axios.post('https://memoritoo-server.onrender.com/story', {
             contentTerm: contentTerm
           });
