@@ -1,12 +1,11 @@
 
 # Memoritoo - ReactJS App Readme
 
-Welcome to Memoritoo, a powerful learning platform powered by OpenAI! This ReactJS-based website is designed to enhance your learning experience through various features and technologies including JavaScript, CSS, SCSS, HTML, and OpenAI APIs. With Memoritoo, you can automatically generate quizzes, access motivational quotes, customize your learning sessions using a Pomodoro clock, and enjoy a visually appealing interface created using SCSS and CSS.
+Welcome to Memoritoo, a powerful learning platform powered by OpenAI! This ReactJS-based website is designed to enhance your learning experience through various features and technologies including ReactJS, NodeJS, JavaScript, CSS, SCSS, HTML, and OpenAI APIs. With Memoritoo, you can automatically generate quizzes, access motivational quotes, customize your learning sessions using a Pomodoro clock, and enjoy a visually appealing interface created using SCSS and CSS.
 
 # How website works
 
-[![Click to Watch](https://drive.google.com/file/d/1cIKLbycVELpqme9CDr24jlJPNphi758s/view?usp=sharing)](https://drive.google.com/file/d/1cIKLbycVELpqme9CDr24jlJPNphi758s/view?usp=sharing)
-
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/kx4aKYlviYs/0.jpg)](http://www.youtube.com/watch?v=kx4aKYlviYs "Memoritoo")
 ## Table of Contents
 
 - [Features](#features)
