@@ -15,7 +15,7 @@ Welcome to Memoritoo, a powerful learning platform powered by OpenAI! This React
 - [API Integration](#api-integration)
 - [Styling](#styling)
 - [Contributing](#contributing)
-- 
+  
 ## Features
 
 Memoritoo offers the following key features:
@@ -35,9 +35,10 @@ Memoritoo is built using the following technologies:
 - **JavaScript**: The primary programming language for creating interactive features.
 - **CSS and SCSS**: Used for styling and enhancing the visual appeal of the website.
 - **ReactJS**: The core framework for building a dynamic and responsive user interface.
+- **NodeJS**: The core framework to set up the server to connect with API.
 - **HTML**: Provides the structure for the web pages.
 - **OpenAI API**: Integrated to automatically generate quizzes based on user input.
-- **Custom API**: Utilized for motivational quotes and other app-specific features.
+- **API**: Utilized for motivational quotes and other app-specific features.
 
 ## Installation
 
