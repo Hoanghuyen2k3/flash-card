@@ -7,10 +7,16 @@ $subtleblue: rgba(148, 187, 233, 1);
     flex-direction: column;
     
     align-items: center;
+    button {
+        cursor: pointer;
+    }
 }
 .black {
     background-color: black;
     color: white;
+    button {
+        cursor: pointer;
+    }
 
 }
 .header{

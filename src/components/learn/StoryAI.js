@@ -57,7 +57,10 @@ function StoryAI() {
         console.error('Error fetching data:', error);
       }   
       finally {
-        setLoading(false)
+        // Set loading to false after a short delay (e.g., 500 milliseconds)
+        setTimeout(() => {
+          setLoading(false);
+        }, 500);
       }
     };
 
