@@ -26,23 +26,28 @@ function Learn() {
   useEffect(() => {
     // Check if 'quiz' has changed before updating 'quizzes'
     if (JSON.stringify(quiz) !== JSON.stringify(quizzes)) {
-      setQuizzes(quiz);
+      filter === "star" ? setQuizzes(quiz.filter(q => q.star === true)) : setQuizzes(quiz);
     }
-  }, [quiz, quizzes]);
+    else {
+      filter === "star" ? setQuizzes(quizzes.filter(q => q.star === true)) : setQuizzes(quizzes);
+    }
+    console.log(quizzes);
+  }, [quiz, quizzes, filter]);
+
   
 
 
 
-  const filterQuizzes = useCallback(() => {
-    return filter === "no" ? quiz.filter(q => q.star === true) : quiz;
-  }, [filter, quiz]);
+  // const filterQuizzes = useCallback(() => {
+  //   return filter === "star" ? quiz.filter(q => q.star === true) : quiz;
+  // }, [filter, quiz]);
 
   
 
   const handleStar = (e) => {
     setFilter(e.target.value);
-    const filteredQuizzes = filterQuizzes();
-    setQuizzes(filteredQuizzes);
+    // const filteredQuizzes = filterQuizzes();
+    // setQuizzes(filteredQuizzes);
   };
 
   const toggleNavLink = () => {
