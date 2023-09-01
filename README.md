@@ -44,7 +44,7 @@ Memoritoo is built using the following technologies:
 
 To run Memoritoo locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/yourusername/memoritoo.git`
+1. Clone the repository: `git clone https://github.com/Hoanghuyen2k3/memoritoo.git`
 2. Navigate to the project directory: `cd memoritoo`
 3. Install dependencies: `npm install`
 
