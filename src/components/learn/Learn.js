@@ -9,6 +9,7 @@ import { FaSun, FaMoon} from "react-icons/fa";
 
 function Learn() {
   const quizz = useSelector(selectQuiz);
+
   const modules = useSelector(selectModule);
   const folders = useSelector(selectFolder);
   const [navLinkVisible, setNavLinkVisible] = useState(false);
@@ -21,6 +22,13 @@ function Learn() {
   const moduleL = params.module ? modules.filter(m => m.id === params.module) : "";
   const quiz = quizz.filter(a => module.includes(a.module)) ;
   // console.log(quiz);
+  const [quizzes, setQuizzes] = useState(quiz);
+  useEffect(() => {
+    // Check if 'quiz' has changed before updating 'quizzes'
+    if (JSON.stringify(quiz) !== JSON.stringify(quizzes)) {
+      setQuizzes(quiz);
+    }
+  }, [quiz, quizzes]);
   
 
 
@@ -29,7 +37,7 @@ function Learn() {
     return filter === "no" ? quiz.filter(q => q.star === true) : quiz;
   }, [filter, quiz]);
 
-  const [quizzes, setQuizzes] = useState(quiz);
+  
 
   const handleStar = (e) => {
     setFilter(e.target.value);
