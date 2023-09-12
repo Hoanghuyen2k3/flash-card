@@ -23,31 +23,26 @@ function Learn() {
   const quiz = quizz.filter(a => module.includes(a.module)) ;
   // console.log(quiz);
   const [quizzes, setQuizzes] = useState(quiz);
-  useEffect(() => {
-    // Check if 'quiz' has changed before updating 'quizzes'
-    if (JSON.stringify(quiz) !== JSON.stringify(quizzes)) {
-      filter === "star" ? setQuizzes(quiz.filter(q => q.star === true)) : setQuizzes(quiz);
-    }
-    else {
-      filter === "star" ? setQuizzes(quizzes.filter(q => q.star === true)) : setQuizzes(quizzes);
-    }
-    console.log(quizzes);
-  }, [quiz, quizzes, filter]);
-
   
 
-
-
-  // const filterQuizzes = useCallback(() => {
-  //   return filter === "star" ? quiz.filter(q => q.star === true) : quiz;
-  // }, [filter, quiz]);
+  useEffect(() => {
+    let filteredQuizzes;
+  
+    if (filter === "star") {
+      filteredQuizzes = quiz.filter(q => q.star === true);
+    } else {
+      filteredQuizzes = quiz;
+    }
+  
+    setQuizzes(filteredQuizzes);
+  }, [quiz, filter]);
+  
 
   
 
   const handleStar = (e) => {
     setFilter(e.target.value);
-    // const filteredQuizzes = filterQuizzes();
-    // setQuizzes(filteredQuizzes);
+    
   };
 
   const toggleNavLink = () => {

@@ -33,41 +33,43 @@ function StoryAI() {
       return { body, title };
     };
   
+    const fetchingContent = async () => {
+      const response = await axios.post('https://memoritoo-server.onrender.com/story', {
+        contentTerm: contentTerm
+      });
+      console.log(response);
+      const { body, title } = extractBodyAndTitle(response.data.answer);
+      setBody(body);
+      setTitle(title);
+  
+      const image = await axios.post('https://memoritoo-server.onrender.com/image', {
+        title: title
+      });
+      console.log(image);
+      setImgTitle(image.data.data[0].url);
+    };
+  
     const handleSubmit = async (event) => {
       event.preventDefault();
-      setLoading(true);
-
+  
+      setLoading(true); // Set loading to true immediately
+  
       try {
-        
-        const response = await axios.post('https://memoritoo-server.onrender.com/story', {
-            contentTerm: contentTerm
-          });
-        console.log(response)
-        const {body, title} = extractBodyAndTitle(response.data.answer); 
-        setBody(body)
-        setTitle(title)
-
-        const image = await axios.post('https://memoritoo-server.onrender.com/image', {
-            title: title
-          });
-        console.log(image)
-        setImgTitle(image.data.data[0].url)
-
+        await fetchingContent();
       } catch (error) {
         console.error('Error fetching data:', error);
-      }   
-      finally {
-        setTimeout(() => {
-          setLoading(false);
-        }, 500);
+      } finally {
+        setLoading(false); // Set loading to false when the API calls are complete or in case of an error
       }
     };
+  
 
     if (!quizzes || quizzes.length === 0) {
       return <div>Empty ... 🥹</div>;
     }
   
     return (
+      loading ? <Loading />: (
       title ?
       <div className="story-container">
           
@@ -75,20 +77,22 @@ function StoryAI() {
         {
           loading ? <Loading />: (
             <div className="story">
-          <div className="img">
-            {imgTitle&&<img src={imgTitle} alt={title} />}
+            <div className="img">
+              {imgTitle&&<img src={imgTitle} alt={title} />}
+            </div>
+            <div className="content">
+              {title&&<h2>{title}</h2>}
+              {bodyStory&&<textarea readOnly value={bodyStory.join('\n')}></textarea>}
+            </div>   
           </div>
-          <div className="content">
-            {title&&<h2>{title}</h2>}
-            {bodyStory&&<textarea readOnly value={bodyStory.join('\n')}></textarea>}
-          </div>   
-        </div>
           )
         }
       </div>
-      :<div className="story-no">  
+      :(
+      <div className="story-no">  
         <button onClick={handleSubmit}>New Story</button>
       </div>
+      ))
     );
   };
 
