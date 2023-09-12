@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/memoritoo/static/css/main.67f2269d.css",
-    "main.js": "/memoritoo/static/js/main.e84ad22b.js",
+    "main.css": "/memoritoo/static/css/main.453639c2.css",
+    "main.js": "/memoritoo/static/js/main.509b058a.js",
     "static/js/787.d874ffdf.chunk.js": "/memoritoo/static/js/787.d874ffdf.chunk.js",
     "static/media/correct.mp3": "/memoritoo/static/media/correct.b6ba29659cf55d571cc0.mp3",
     "static/media/error.mp3": "/memoritoo/static/media/error.9c958fabe6243367d74c.mp3",
     "static/media/cloud-phone.jpg": "/memoritoo/static/media/cloud-phone.d708b3880b5d08d8c703.jpg",
     "index.html": "/memoritoo/index.html",
-    "main.67f2269d.css.map": "/memoritoo/static/css/main.67f2269d.css.map",
-    "main.e84ad22b.js.map": "/memoritoo/static/js/main.e84ad22b.js.map",
+    "main.453639c2.css.map": "/memoritoo/static/css/main.453639c2.css.map",
+    "main.509b058a.js.map": "/memoritoo/static/js/main.509b058a.js.map",
     "787.d874ffdf.chunk.js.map": "/memoritoo/static/js/787.d874ffdf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.67f2269d.css",
-    "static/js/main.e84ad22b.js"
+    "static/css/main.453639c2.css",
+    "static/js/main.509b058a.js"
   ]
 }
