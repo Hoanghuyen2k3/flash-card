@@ -1,7 +1,7 @@
 
 # Memoritoo 
 
-Welcome to Memoritoo, a powerful learning platform powered by OpenAI! This ReactJS-based website is designed to enhance your learning experience through various features and technologies including ReactJS, NodeJS, JavaScript, CSS, SCSS, HTML, and OpenAI APIs. With Memoritoo, you can automatically generate quizzes, access motivational quotes, customize your learning sessions using a Pomodoro clock, and enjoy a visually appealing interface created using SCSS and CSS.
+Welcome to Memoritoo, a powerful learning platform powered by OpenAI! This ReactJS-based website is designed to enhance your learning experience through various features and technologies including ReactJS, NodeJS, JavaScript, CSS, SCSS, HTML, and OpenAI APIs. With Memoritoo, you can generate quizzes manually or with the help of AI, access motivational quotes, customize your learning sessions using a Pomodoro clock, and enjoy a visually appealing interface created using SCSS and CSS.
 
 # How website works
 
